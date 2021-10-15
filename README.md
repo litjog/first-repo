@@ -1,6 +1,6 @@
 # Luck
 
-> live: https://try-luck.netlify.app/
+> live: https://tryluck.netlify.app/
 
 > Try to get the same number on all squares.
 
