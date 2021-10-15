@@ -1,8 +1,6 @@
 :root {
   --border-color: #777;
-  --border-color-hover: #333;
   --border-style: 2px dashed var(--border-color);
-  --border-style-hover: 2px dashed var(--border-color-hover);
   --font-color: #111;
   --background-color: #eee;
   --transition-duration: 500ms;
@@ -28,7 +26,14 @@ body {
   background-color: var(--background-color);
 }
 
+dialog::backdrop {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .container {
+  max-width: 20em;
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
@@ -59,12 +64,24 @@ body {
   grid-area: button;
 }
 
+dialog {
+  padding: 2rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+dialog::-webkit-backdrop {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 details {
   border: var(--border-style);
   padding: 0.5em 0.5em 0;
   cursor: pointer;
   width: 100%;
-  transition: border var(--transition-duration);
 }
 
 summary {
@@ -75,20 +92,12 @@ summary {
 
 details[open] {
   padding: 0.5em;
+  min-width: 18em;
 }
 
 details[open] summary {
   border-bottom: var(--border-style);
   margin-bottom: 0.5em;
-  transition: border-bottom var(--transition-duration);
-}
-
-details:hover {
-  border: var(--border-style-hover);
-}
-
-details[open] summary:hover {
-  border-bottom: var(--border-style-hover);
 }
 
 .num {
@@ -97,16 +106,11 @@ details[open] summary:hover {
   font-weight: 800;
   font-size: var(--font-size-lg);
   border: var(--border-style);
-  transition: --num var(--transition-duration),
-    border var(--transition-duration);
+  transition: --num var(--transition-duration);
 }
 
 .num::after {
   content: counter(num);
-}
-
-.num:hover {
-  border: var(--border-style-hover);
 }
 
 button {

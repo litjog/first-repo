@@ -1,14 +1,16 @@
+import setNumber from './setNumber';
+
 /**
  *
- * @param {HTMLDivElement} div
+ * @param {HTMLDivElement} element
  * @param {number} delay
  * @returns {Promise<any>}
  */
-export default function createDelay(div, delay) {
+export default function createDelay(element, delay) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      div.style.setProperty('--num', 0);
-      resolve({ div, delay });
+      setNumber(element, 0);
+      resolve({ element, delay });
     }, delay);
   });
 }

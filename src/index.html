@@ -4,18 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luck</title>
+    <title>Try luck</title>
   </head>
   <body>
+    <dialog id="dialog">
+      <p>🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉</p>
+      <p>🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉</p>
+      <p>🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉</p>
+      <p>🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉</p>
+      <p>🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉</p>
+      <menu>
+        <button id="closeDialogButton">❌ Close</button>
+      </menu>
+    </dialog>
     <div class="container">
       <details class="details">
-        <summary>Hint</summary>
+        <summary>❓ Hint</summary>
         Try to get the same number on all squares.
+        <em>⚠️ Some features may not work in some browsers.</em>
       </details>
       <div class="num one"></div>
       <div class="num two"></div>
       <div class="num three"></div>
-      <button class="button" type="button">Try your luck</button>
+      <button class="button" id="tryButton" type="button">
+        🎲 Try your luck
+      </button>
     </div>
     <script src="js/main.js"></script>
   </body>
