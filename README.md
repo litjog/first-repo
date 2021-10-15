@@ -1,4 +1,4 @@
-# Luck
+# Try luck
 
 > live: https://tryluck.netlify.app/
 
